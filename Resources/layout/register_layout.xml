@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+                        <TextView
+            android:text="Enter Email"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="320.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="105.0dp"
+            android:id="@+id/textEmail" 
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="325.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_email"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#f2be8d"/>
+
+        <TextView
+            android:text="Enter Username"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="320.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15.0dp"
+            android:id="@+id/textLogInName" 
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="325.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_username"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#f2be8d"/>
+
+        <TextView
+            android:text="Enter New Password"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="320.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15.0dp"
+            android:id="@+id/textPassword"
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="325.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_password"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#f2be8d"/>
+
+                <TextView
+            android:text="Confirm New Password"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="320.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15.0dp"
+            android:id="@+id/textRePassword"
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="325.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_repassword"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#f2be8d"/>
+
+    </LinearLayout>
+
+        <Button
+            android:text="Register"
+            android:id="@+id/buttonRegister"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#f2be8d"
+            android:textColor="#ba6d65"/>
+
+</LinearLayout>

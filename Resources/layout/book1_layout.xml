@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:src="@drawable/books1"
+        android:layout_width="200dp"
+        android:layout_height="270dp"
+        android:layout_gravity="center"
+        android:id="@+id/imageView1"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="The Reborn Witch Foretells Destruction"
+        android:gravity="center" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:text="Genre: Fantasy, Isekai, Romance, Slice of Life"
+        android:gravity="center" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="177.5dp"
+        android:layout_marginTop="60dp"
+        android:layout_margin="30dp"
+        android:text="High school student Sena Shirai is just about to leave behind her shut-in lifestyle and join the outside world, when she becomes the victim of a traffic accident. When she opens her eyes, she's somehow been reborn into a fantasy world! However, everyone around her fears her as a witch, so she reverts to her former habits and lives a lonely life in the woods, until one day when… a young man comes to see the witch?!"
+        android:gravity="center" 
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:text="Proceed to Checkout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:id="@+id/book1_checkout"
+        android:backgroundTint="#f2be8d"
+        android:textColor="#ba6d65"/> 
+
+</LinearLayout>

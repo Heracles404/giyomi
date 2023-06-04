@@ -1,0 +1,58 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="match_parent"
+        android:layout_height="435dp"
+        android:id="@+id/imageView1" />
+
+    <TextView
+        android:text="Giyomi Book."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="38.5dp"
+        android:gravity="center"
+        android:id="@+id/textTitle" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="Dive into a boundless realm of manga. Rent, Claim, and experience the joy of reading renowned manga by the world-famous author Eiichiro Oda."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="292.4dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/textSubTitle"
+        android:textColor="@android:color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="120.0dp">
+
+        <Button
+            android:text="Log in"
+            android:layout_width="0dp"
+            android:layout_height="45.5dp"
+            android:layout_weight="1"
+            android:id="@+id/buttonLogin"
+            android:backgroundTint="#f2be8d"
+            android:textColor="#ba6d65"/>
+
+        <Button
+            android:text="Register"
+            android:layout_width="0dp"
+            android:layout_height="45.5dp"
+            android:layout_weight="1"
+            android:id="@+id/buttonRegister"
+            android:backgroundTint="#f2be8d"
+            android:textColor="#ba6d65"/>
+
+    </LinearLayout>
+
+</LinearLayout>
