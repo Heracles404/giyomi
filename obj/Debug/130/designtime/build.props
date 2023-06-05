@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638215979247887825
+_nugetassetstimestamp=638216052093067718
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=c:\users\bncnz\onedrive\desktop\it123p\giyomi\group2_it123p_mp.csproj
+projectfullpath=z:\giyomi\group2_it123p_mp.csproj

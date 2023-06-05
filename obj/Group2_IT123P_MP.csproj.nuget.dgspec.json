@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bncnz\\OneDrive\\Desktop\\IT123P\\giyomi\\Group2_IT123P_MP.csproj": {}
+    "Z:\\giyomi\\Group2_IT123P_MP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bncnz\\OneDrive\\Desktop\\IT123P\\giyomi\\Group2_IT123P_MP.csproj": {
+    "Z:\\giyomi\\Group2_IT123P_MP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bncnz\\OneDrive\\Desktop\\IT123P\\giyomi\\Group2_IT123P_MP.csproj",
+        "projectUniqueName": "Z:\\giyomi\\Group2_IT123P_MP.csproj",
         "projectName": "Group2_IT123P_MP",
-        "projectPath": "C:\\Users\\bncnz\\OneDrive\\Desktop\\IT123P\\giyomi\\Group2_IT123P_MP.csproj",
+        "projectPath": "Z:\\giyomi\\Group2_IT123P_MP.csproj",
         "packagesPath": "C:\\Users\\bncnz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bncnz\\OneDrive\\Desktop\\IT123P\\giyomi\\obj\\",
+        "outputPath": "Z:\\giyomi\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
