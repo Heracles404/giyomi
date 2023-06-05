@@ -20,6 +20,7 @@ namespace Group2_IT123P_MP.Menu
         private EditText payment_MobileNumber;
         private TextView paymentBookName;
         private Button payment_pay;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,12 +42,13 @@ namespace Group2_IT123P_MP.Menu
             paymentBookName.Text = bookName;
 
             payment_pay = FindViewById<Button>(Resource.Id.payment_pay);
-            payment_pay.Click += payment_pay_function_Click;
+            payment_pay.Click += PaymentPayButton_Click;
 
             payment_radiogroup = FindViewById<RadioGroup>(Resource.Id.payment_radiogroup);
             payment_MobileNumber = FindViewById<EditText>(Resource.Id.payment_mobilenumber);
         }
-        private void payment_pay_function_Click(object sender, EventArgs e)
+
+        private void PaymentPayButton_Click(object sender, EventArgs e)
         {
             int selectedRadioButtonId = payment_radiogroup.CheckedRadioButtonId;
             if (selectedRadioButtonId == -1)
@@ -63,11 +65,51 @@ namespace Group2_IT123P_MP.Menu
                 }
                 else
                 {
-                    // Proceed with the payment
-                    StartActivity(typeof(receiptsactivity));
+                    // Show Payment Confirmation Dialog
+                    ShowPaymentConfirmationDialog();
                 }
             }
         }
 
+        private void ShowPaymentConfirmationDialog()
+        {
+            AndroidX.AppCompat.App.AlertDialog.Builder builder = new AndroidX.AppCompat.App.AlertDialog.Builder(this);
+            builder.SetTitle("Payment Confirmation");
+
+            // Set a custom view for the dialog title
+            LayoutInflater inflater = LayoutInflater.From(this);
+            View titleView = inflater.Inflate(Resource.Layout.dialog_title_layout, null);
+            builder.SetCustomTitle(titleView);
+
+            builder.SetMessage("Are you sure you want to proceed with the payment?");
+            builder.SetCancelable(true);
+            builder.SetPositiveButton("Proceed", (sender, args) =>
+            {
+                // Proceed with the payment
+                StartActivity(typeof(receiptsactivity));
+            });
+            builder.SetNegativeButton("Cancel", (sender, args) =>
+            {
+                // Handle cancel action, if needed
+            });
+
+            AndroidX.AppCompat.App.AlertDialog dialog = builder.Create();
+            dialog.Show();
+
+            // Customize the dialog colors
+            int messageId = Resources.GetIdentifier("message", "id", "android");
+            TextView dialogMessage = dialog.FindViewById<TextView>(messageId);
+            dialogMessage.SetTextColor(Color.ParseColor("#f2be8d"));
+
+            // Set the dialog window background color
+            Window window = dialog.Window;
+            window.SetBackgroundDrawable(new ColorDrawable(Color.ParseColor("#394359")));
+
+            Button positiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+            positiveButton.SetTextColor(Color.ParseColor("#ba6d65"));
+
+            Button negativeButton = dialog.GetButton((int)DialogButtonType.Negative);
+            negativeButton.SetTextColor(Color.ParseColor("#ba6d65"));
+        }
     }
 }

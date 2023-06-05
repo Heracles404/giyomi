@@ -5163,24 +5163,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bncnz\\.nuget\\packages\\": {},
+    "C:\\Users\\crist\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bncnz\\OneDrive\\Desktop\\Group2_IT123P_MP\\Group2_IT123P_MP.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\giyomi\\Group2_IT123P_MP.csproj",
       "projectName": "Group2_IT123P_MP",
-      "projectPath": "C:\\Users\\bncnz\\OneDrive\\Desktop\\Group2_IT123P_MP\\Group2_IT123P_MP.csproj",
-      "packagesPath": "C:\\Users\\bncnz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bncnz\\OneDrive\\Desktop\\Group2_IT123P_MP\\obj\\",
+      "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\giyomi\\Group2_IT123P_MP.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\giyomi\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bncnz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
