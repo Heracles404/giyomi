@@ -4,7 +4,7 @@
     <SelectedDevice>OnePlus CPH2399</SelectedDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <ActiveDebugProfile>OnePlus CPH2399 %28Android 13.0 - API 33%29</ActiveDebugProfile>
-    <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
     <AndroidDesignerPreferredDevice>pixel_3a</AndroidDesignerPreferredDevice>
     <DefaultDevice>pixel_5_-_api_33</DefaultDevice>
   </PropertyGroup>

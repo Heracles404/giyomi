@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Book Name"
+            android:text="Book Name:"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="320.0dp"
             android:layout_height="wrap_content"
@@ -25,9 +25,20 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/payment_bookname" 
             android:gravity="center"
             android:textColor="@android:color/white"/>
+
+        <ImageView
+        android:src="@drawable/books3"
+        android:layout_width="110dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:id="@+id/payment_imageview" />
+
 
         <TextView
             android:text="Mode of Payment"

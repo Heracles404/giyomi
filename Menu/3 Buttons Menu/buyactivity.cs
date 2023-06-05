@@ -19,6 +19,7 @@ namespace Group2_IT123P_MP
         private Button buy_proceed;
         private RadioGroup radioGroup;
         private string selectedBookName; // Variable to store the selected book name
+        private ImageView imageView1, imageView2, imageView3, imageView4; // Declare ImageView variables
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,19 +42,57 @@ namespace Group2_IT123P_MP
 
             radioGroup = FindViewById<RadioGroup>(Resource.Id.radioGroup);
             radioGroup.CheckedChange += RadioGroup_CheckedChange;
+
+            // Initialize ImageView variables
+            imageView1 = FindViewById<ImageView>(Resource.Id.imageView1);
+            imageView2 = FindViewById<ImageView>(Resource.Id.imageView2);
+            imageView3 = FindViewById<ImageView>(Resource.Id.imageView3);
+            imageView4 = FindViewById<ImageView>(Resource.Id.imageView4);
+
+            // Set onClickListener for each ImageView
+            imageView1.Click += (sender, e) => RadioButton_Click(sender, e, Resource.Id.buy_book1);
+            imageView2.Click += (sender, e) => RadioButton_Click(sender, e, Resource.Id.buy_book2);
+            imageView3.Click += (sender, e) => RadioButton_Click(sender, e, Resource.Id.buy_book3);
+            imageView4.Click += (sender, e) => RadioButton_Click(sender, e, Resource.Id.buy_book4);
         }
 
         private void Buy_proceed_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedBookName))
+            int selectedRadioButtonId = radioGroup.CheckedRadioButtonId;
+            if (selectedRadioButtonId == -1)
             {
-                Toast.MakeText(this, "Please select at least one book", ToastLength.Short).Show();
+                Toast.MakeText(this, "Please choose a book.", ToastLength.Short).Show();
             }
             else
             {
-                Intent intent = new Intent(this, typeof(paymentactivity));
-                intent.PutExtra("bookName", selectedBookName);
-                StartActivity(intent);
+                int selectedImageId = 0;
+                string selectedBookName = "";
+
+                if (selectedRadioButtonId == Resource.Id.buy_book1)
+                {
+                    selectedImageId = Resource.Drawable.books1;
+                    selectedBookName = "The Reborn Witch Foretells Destruction";
+                }
+                else if (selectedRadioButtonId == Resource.Id.buy_book2)
+                {
+                    selectedImageId = Resource.Drawable.books2;
+                    selectedBookName = "[Oshi no ko]";
+                }
+                else if (selectedRadioButtonId == Resource.Id.buy_book3)
+                {
+                    selectedImageId = Resource.Drawable.books3;
+                    selectedBookName = "Bocchi the Rock!";
+                }
+                else if (selectedRadioButtonId == Resource.Id.buy_book4)
+                {
+                    selectedImageId = Resource.Drawable.books4;
+                    selectedBookName = "Isekai Uncle";
+                }
+
+                Intent paymentIntent = new Intent(this, typeof(paymentactivity));
+                paymentIntent.PutExtra("selectedImageId", selectedImageId);
+                paymentIntent.PutExtra("selectedBookName", selectedBookName);
+                StartActivity(paymentIntent);
             }
         }
 
@@ -61,6 +100,12 @@ namespace Group2_IT123P_MP
         {
             RadioButton radioButton = FindViewById<RadioButton>(e.CheckedId);
             selectedBookName = radioButton.Text.ToString();
+        }
+
+        private void RadioButton_Click(object sender, EventArgs e, int radioButtonId)
+        {
+            RadioButton radioButton = FindViewById<RadioButton>(radioButtonId);
+            radioButton.Checked = true;
         }
     }
 }

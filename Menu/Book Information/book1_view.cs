@@ -38,12 +38,16 @@ namespace Group2_IT123P_MP.Book
 
 
         }
+        //pass the book using intent
         private void Books1_function_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(paymentactivity));
-            intent.PutExtra("bookName", "The Reborn Witch Foretells Destruction");
+
+            // Pass the book image and title using intent extras
+            intent.PutExtra("selectedImageId", Resource.Drawable.books1); // Replace with the actual resource ID of the book image
+            intent.PutExtra("selectedBookName", "The Reborn Witch Foretells Destruction"); // Replace with the actual book title
+
             StartActivity(intent);
         }
-
     }
 }

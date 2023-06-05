@@ -39,7 +39,11 @@ namespace Group2_IT123P_MP.Book
         private void Books3_function_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(paymentactivity));
-            intent.PutExtra("bookName", "Bocchi the Rock!");
+
+            // Pass the book image and title using intent extras
+            intent.PutExtra("selectedImageId", Resource.Drawable.books3); // Replace with the actual resource ID of the book image
+            intent.PutExtra("selectedBookName", "Bocchi the Rock!"); // Replace with the actual book title
+
             StartActivity(intent);
         }
     }
