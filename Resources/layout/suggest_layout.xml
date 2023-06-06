@@ -16,13 +16,14 @@
         android:textColor="@android:color/white"/>
 
     <TextView
-        android:text="Book Name"
+        android:text="Suggest Book Name"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="105.0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="20.0dp"
-        android:id="@+id/textViewBookName" 
+        android:layout_marginLeft="39dp"
+        android:id="@+id/textViewBookName"
         android:textColor="@android:color/white"/>
     <EditText
         android:layout_width="320.0dp"
@@ -42,8 +43,6 @@
         android:textColor="@android:color/white"/>
 
     <RadioGroup
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/radioGroupGenre">
@@ -82,16 +81,8 @@
         android:id="@+id/buttonSuggestSubmit" 
         android:backgroundTint="#f2be8d"
         android:textColor="#ba6d65"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"/>
 
-    <Button
-        android:text="View Leading"
-        android:layout_width="280dp"
-        android:layout_height="45.5dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/buttonSuggestViewLeading"
-        android:backgroundTint="#f2be8d"
-        android:textColor="#ba6d65"/>
 
     <TextView
         android:text="Leading Next Book Genre by Votes is:"
@@ -99,7 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50.0dp"
+        android:enabled="false"
+        android:layout_marginTop="230.0dp"
         android:id="@+id/textViewSuggestLeading" 
         android:textColor="@android:color/white"/>
 
@@ -108,6 +100,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editTextSuggestLeading"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:textColor="@android:color/white"
         android:backgroundTint="#f2be8d"/>
 
