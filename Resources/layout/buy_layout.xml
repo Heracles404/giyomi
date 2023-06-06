@@ -1,91 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <RadioGroup
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioGroup">
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:layout_width="290.0dp"
-            android:layout_height="wrap_content"
-            android:text="The Reborn Witch Foretells Destruction"
-            android:id="@+id/buy_book1"
-            android:layout_gravity="center_horizontal" 
-            android:textColor="@android:color/white"
-            android:buttonTint="#f2be8d"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup">
 
-            <ImageView
-                android:src="@drawable/books1"
-                android:layout_width="110dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY"
-                android:id="@+id/imageView1" />
+                <RadioButton
+                    android:layout_width="290.0dp"
+                    android:layout_height="wrap_content"
+                    android:text="The Reborn Witch Foretells Destruction"
+                    android:id="@+id/buy_book1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:buttonTint="#f2be8d"/>
 
-        <RadioButton
-            android:layout_width="290.0dp"
-            android:layout_height="wrap_content"
-            android:text="[Oshi no ko]"
-            android:id="@+id/buy_book2"
-            android:layout_gravity="center_horizontal" 
-            android:textColor="@android:color/white"
-            android:buttonTint="#f2be8d"/>
+                <ImageView
+                    android:src="@drawable/books1"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView1" />
 
-            <ImageView
-                android:src="@drawable/books2"
-                android:layout_width="110dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY"
-                android:id="@+id/imageView2" />
+                <RadioButton
+                    android:layout_width="290.0dp"
+                    android:layout_height="wrap_content"
+                    android:text="[Oshi no ko]"
+                    android:id="@+id/buy_book2"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:buttonTint="#f2be8d"/>
 
-        <RadioButton
-            android:layout_width="290.0dp"
-            android:layout_height="wrap_content"
-            android:text="Bocchi the Rock!"
-            android:id="@+id/buy_book3"
-            android:layout_gravity="center_horizontal" 
-            android:textColor="@android:color/white"
-            android:buttonTint="#f2be8d"/>
+                <ImageView
+                    android:src="@drawable/books2"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView2" />
 
-            <ImageView
-                android:src="@drawable/books3"
-                android:layout_width="110dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY"
-                android:id="@+id/imageView3" />
+                <RadioButton
+                    android:layout_width="290.0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bocchi the Rock!"
+                    android:id="@+id/buy_book3"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:buttonTint="#f2be8d"/>
 
-        <RadioButton
-            android:layout_width="290.0dp"
-            android:layout_height="wrap_content"
-            android:text="Isekai Uncle"
-            android:id="@+id/buy_book4"
-            android:layout_gravity="center_horizontal" 
-            android:textColor="@android:color/white"
-            android:buttonTint="#f2be8d"/>
+                <ImageView
+                    android:src="@drawable/books3"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView3" />
 
-            <ImageView
-                android:src="@drawable/books4"
-                android:layout_width="110dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitXY"
-                android:id="@+id/imageView4" />
+                <RadioButton
+                    android:layout_width="290.0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Isekai Uncle"
+                    android:id="@+id/buy_book4"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:buttonTint="#f2be8d"/>
 
-        </RadioGroup>
+                <ImageView
+                    android:src="@drawable/books4"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView4" />
 
-    </LinearLayout>
+            </RadioGroup>
+
+        </LinearLayout>
 
         <Button
             android:text="Proceed to checkout"
@@ -97,6 +101,6 @@
             android:backgroundTint="#f2be8d"
             android:textColor="#ba6d65"/>
 
+    </LinearLayout>
 
-</LinearLayout>
-
+</ScrollView>
