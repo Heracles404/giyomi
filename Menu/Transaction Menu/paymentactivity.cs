@@ -97,14 +97,26 @@ namespace Group2_IT123P_MP.Menu
             builder.SetCancelable(true);
             builder.SetPositiveButton("Proceed", (sender, args) =>
             {
+                // Retrieve selected payment method
+                RadioGroup paymentRadioGroup = FindViewById<RadioGroup>(Resource.Id.payment_radiogroup);
+                int selectedId = paymentRadioGroup.CheckedRadioButtonId;
+                RadioButton selectedRadioButton = FindViewById<RadioButton>(selectedId);
+                string selectedPaymentMethod = selectedRadioButton.Text;
+
                 // Retrieve book name and image ID
                 string bookName = paymentBookName.Text;
                 int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
+
+                // Retrieve phone number
+                EditText paymentMobileNumberEditText = FindViewById<EditText>(Resource.Id.payment_mobilenumber);
+                string phoneNumber = paymentMobileNumberEditText.Text;
 
                 // Pass intent to ReceiptsActivity
                 Intent intent = new Intent(this, typeof(receiptsactivity));
                 intent.PutExtra("bookName", bookName);
                 intent.PutExtra("selectedImageId", selectedImageId);
+                intent.PutExtra("selectedPaymentMethod", selectedPaymentMethod);
+                intent.PutExtra("phoneNumber", phoneNumber);
                 StartActivity(intent);
             });
             builder.SetNegativeButton("Cancel", (sender, args) =>
