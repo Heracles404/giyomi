@@ -36,6 +36,8 @@ ImageView;obj\Debug\130\res\layout\book3_layout.xml
 ImageView;obj\Debug\130\res\layout\book4_layout.xml
 ImageView;obj\Debug\130\res\layout\buy_layout.xml
 ImageView;obj\Debug\130\res\layout\main_menu.xml
+ImageView;obj\Debug\130\res\layout\payment_layout.xml
+ImageView;obj\Debug\130\res\layout\receipts_layout.xml
 ImageView;obj\Debug\130\res\layout\start_menu.xml
 item;obj\Debug\130\res\values\styles.xml
 LinearLayout;obj\Debug\130\res\layout\book1_layout.xml

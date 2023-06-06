@@ -46,6 +46,18 @@ namespace Group2_IT123P_MP.Menu
 
             payment_radiogroup = FindViewById<RadioGroup>(Resource.Id.payment_radiogroup);
             payment_MobileNumber = FindViewById<EditText>(Resource.Id.payment_mobilenumber);
+
+            int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
+            string selectedBookName = Intent.GetStringExtra("selectedBookName");
+
+            if (selectedImageId != 0)
+            {
+                ImageView paymentImageView = FindViewById<ImageView>(Resource.Id.payment_imageview);
+                paymentImageView.SetImageResource(selectedImageId);
+            }
+
+            TextView paymentBookNameTextView = FindViewById<TextView>(Resource.Id.payment_bookname);
+            paymentBookNameTextView.Text = selectedBookName;
         }
 
         private void PaymentPayButton_Click(object sender, EventArgs e)
@@ -85,8 +97,15 @@ namespace Group2_IT123P_MP.Menu
             builder.SetCancelable(true);
             builder.SetPositiveButton("Proceed", (sender, args) =>
             {
-                // Proceed with the payment
-                StartActivity(typeof(receiptsactivity));
+                // Retrieve book name and image ID
+                string bookName = paymentBookName.Text;
+                int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
+
+                // Pass intent to ReceiptsActivity
+                Intent intent = new Intent(this, typeof(receiptsactivity));
+                intent.PutExtra("bookName", bookName);
+                intent.PutExtra("selectedImageId", selectedImageId);
+                StartActivity(intent);
             });
             builder.SetNegativeButton("Cancel", (sender, args) =>
             {

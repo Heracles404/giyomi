@@ -31,6 +31,17 @@ namespace Group2_IT123P_MP.Menu
             // Background Color
             Window.DecorView.SetBackgroundColor(Color.ParseColor("#394359"));
 
+            // Retrieve intent extras
+            string bookName = Intent.GetStringExtra("bookName");
+            int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
+
+            // Update image and book title
+            ImageView receiptImageView = FindViewById<ImageView>(Resource.Id.receipt_imageview);
+            receiptImageView.SetImageResource(selectedImageId);
+
+            TextView receiptBookNameTextView = FindViewById<TextView>(Resource.Id.receipt_bookname);
+            receiptBookNameTextView.Text = bookName;
+
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;
         }
