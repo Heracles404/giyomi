@@ -116,6 +116,8 @@ namespace Group2_IT123P_MP.Menu
 
         public void sendOTP()
         {
+            buttonRegister.Enabled = false;
+
             // Generates Random OTP
             string[] OTPAllowedCharacters = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
 
