@@ -67,8 +67,8 @@
             <RadioButton
                 android:layout_width="290.0dp"
                 android:layout_height="wrap_content"
-                android:text="Paymaya"
-                android:id="@+id/radioButtonPaymaya"
+                android:text="Maya"
+                android:id="@+id/radioButtonMaya"
                 android:layout_gravity="center_horizontal" 
                 android:textColor="@android:color/white"
                 android:buttonTint="#f2be8d"/>

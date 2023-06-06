@@ -40,13 +40,31 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Amount Due: 800php"
+            android:text="Amount: 800php"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginTop="20.0dp"
             android:id="@+id/receipt_AmountDue"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:text="*MODE OF PAYMENT*"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/receipt_mop" 
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:text="*MOBILE NUMBER*"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/receipt_phonenumber" 
             android:textColor="@android:color/white"/>
 
         <TextView
@@ -96,7 +114,7 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:id="@+id/receipt_ClaimDate"
-            android:layout_marginTop="130.0dp"
+            android:layout_marginTop="100.0dp"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>

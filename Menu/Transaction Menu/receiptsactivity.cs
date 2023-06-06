@@ -16,6 +16,8 @@ namespace Group2_IT123P_MP.Menu
     {
         private Button buttonThankYou;
         private TextView ref_number;
+        private TextView receipt_mop;
+        private TextView receipt_phonenumber;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,6 +37,8 @@ namespace Group2_IT123P_MP.Menu
             // Retrieve intent extras
             string bookName = Intent.GetStringExtra("bookName");
             int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
+            string selectedPaymentMethod = Intent.GetStringExtra("selectedPaymentMethod");
+            string phoneNumber = Intent.GetStringExtra("phoneNumber");
 
             // Update image and book title
             ImageView receiptImageView = FindViewById<ImageView>(Resource.Id.receipt_imageview);
@@ -55,6 +59,14 @@ namespace Group2_IT123P_MP.Menu
             // Update reference number TextView
             TextView refNumberTextView = FindViewById<TextView>(Resource.Id.ref_number);
             refNumberTextView.Text = "Ref. Number: " + referenceNumber;
+
+            // Update receipt_mop TextView
+            TextView receiptMopTextView = FindViewById<TextView>(Resource.Id.receipt_mop);
+            receiptMopTextView.Text = selectedPaymentMethod;
+
+            // Update receipt_phonenumber TextView
+            TextView receiptPhoneNumberTextView = FindViewById<TextView>(Resource.Id.receipt_phonenumber);
+            receiptPhoneNumberTextView.Text = phoneNumber;
 
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;

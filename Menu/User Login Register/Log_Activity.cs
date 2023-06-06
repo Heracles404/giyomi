@@ -43,8 +43,6 @@ namespace Group2_IT123P_MP.Menu
             forgotPassword.Click += forgotPassword_Click;
 
             SpannableString content = new SpannableString("Forgot Password?");
-            // Apply italic style
-            content.SetSpan(new StyleSpan(TypefaceStyle.Italic), 0, content.Length(), 0);
             // Apply relative text size (smaller)
             content.SetSpan(new RelativeSizeSpan(0.8f), 0, content.Length(), 0);
             // Apply underline
