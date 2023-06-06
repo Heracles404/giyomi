@@ -111,12 +111,16 @@ namespace Group2_IT123P_MP.Menu
                 EditText paymentMobileNumberEditText = FindViewById<EditText>(Resource.Id.payment_mobilenumber);
                 string phoneNumber = paymentMobileNumberEditText.Text;
 
+                // Retrieve username
+                string username = Intent.GetStringExtra("username");
+
                 // Pass intent to ReceiptsActivity
                 Intent intent = new Intent(this, typeof(receiptsactivity));
                 intent.PutExtra("bookName", bookName);
                 intent.PutExtra("selectedImageId", selectedImageId);
                 intent.PutExtra("selectedPaymentMethod", selectedPaymentMethod);
                 intent.PutExtra("phoneNumber", phoneNumber);
+                intent.PutExtra("username", username);
                 StartActivity(intent);
             });
             builder.SetNegativeButton("Cancel", (sender, args) =>
@@ -142,5 +146,6 @@ namespace Group2_IT123P_MP.Menu
             Button negativeButton = dialog.GetButton((int)DialogButtonType.Negative);
             negativeButton.SetTextColor(Color.ParseColor("#ba6d65"));
         }
+
     }
 }

@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Group2_IT123P_MP.Book;
 using AndroidX.AppCompat.App;
+using Android.Content;
 using System;
 
 
@@ -52,19 +53,31 @@ namespace Group2_IT123P_MP
         }
         private void Books1_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(book1_view));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(book1_view));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
         private void Books2_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(book2_view));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(book2_view));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
         private void Books3_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(book3_view));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(book3_view));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
         private void Books4_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(book4_view));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(book4_view));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
     }
 }

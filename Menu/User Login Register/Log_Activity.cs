@@ -87,10 +87,9 @@ namespace Group2_IT123P_MP.Menu
 
                 if (res.Contains("OK!"))
                 {
-                    // Login successful
-                    Intent i = new Intent(this, typeof(Start_Activity));
-                    i.PutExtra("Name", uname);
-                    StartActivity(i);
+                    Intent intent = new Intent(this, typeof(Start_Activity));
+                    intent.PutExtra("username", login_username.Text);
+                    StartActivity(intent);
                 }
                 else
                 {

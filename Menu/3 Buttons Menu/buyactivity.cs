@@ -92,9 +92,15 @@ namespace Group2_IT123P_MP
                 Intent paymentIntent = new Intent(this, typeof(paymentactivity));
                 paymentIntent.PutExtra("selectedImageId", selectedImageId);
                 paymentIntent.PutExtra("selectedBookName", selectedBookName);
+
+                // Pass the username intent to the next activity
+                string username = Intent.GetStringExtra("username");
+                paymentIntent.PutExtra("username", username);
+
                 StartActivity(paymentIntent);
             }
         }
+
 
         private void RadioGroup_CheckedChange(object sender, RadioGroup.CheckedChangeEventArgs e)
         {

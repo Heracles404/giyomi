@@ -35,8 +35,6 @@ namespace Group2_IT123P_MP.Book
 
             book1_checkout = FindViewById<Button>(Resource.Id.book1_checkout);
             book1_checkout.Click += Books1_function_Click;
-
-
         }
         //pass the book using intent
         private void Books1_function_Click(object sender, EventArgs e)
@@ -46,7 +44,8 @@ namespace Group2_IT123P_MP.Book
             // Pass the book image and title using intent extras
             intent.PutExtra("selectedImageId", Resource.Drawable.books1); // Replace with the actual resource ID of the book image
             intent.PutExtra("selectedBookName", "The Reborn Witch Foretells Destruction"); // Replace with the actual book title
-
+            string username = Intent.GetStringExtra("username");
+            intent.PutExtra("username", username);
             StartActivity(intent);
         }
     }
