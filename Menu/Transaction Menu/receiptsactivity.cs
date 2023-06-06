@@ -15,6 +15,7 @@ namespace Group2_IT123P_MP.Menu
     public class receiptsactivity : AppCompatActivity
     {
         private Button buttonThankYou;
+        private TextView ref_number;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,6 +42,19 @@ namespace Group2_IT123P_MP.Menu
 
             TextView receiptBookNameTextView = FindViewById<TextView>(Resource.Id.receipt_bookname);
             receiptBookNameTextView.Text = bookName;
+
+            // Generate reference number
+            string referenceNumber = String.Empty;
+            var random = new Random();
+
+            for (int i = 0; i < 8; i++)
+            {
+                referenceNumber += random.Next(0, 10).ToString();
+            }
+
+            // Update reference number TextView
+            TextView refNumberTextView = FindViewById<TextView>(Resource.Id.ref_number);
+            refNumberTextView.Text = "Ref. Number: " + referenceNumber;
 
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;
