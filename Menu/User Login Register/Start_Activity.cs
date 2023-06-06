@@ -8,6 +8,7 @@ using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Android.Content;
 using System;
 
 
@@ -50,12 +51,18 @@ namespace Group2_IT123P_MP
 
         private void viewbutton_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(viewactivity));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(viewactivity));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
 
         private void buybutton_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(buyactivity));
+            string username = Intent.GetStringExtra("username");
+            Intent intent = new Intent(this, typeof(buyactivity));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
         }
 
         private void suggestbutton_Click(object sender, EventArgs e)

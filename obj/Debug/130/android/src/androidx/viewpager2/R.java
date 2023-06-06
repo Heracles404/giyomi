@@ -136,20 +136,20 @@ public final class R {
 		public static final int notification_background = 0x7f080163;
 		public static final int notification_main_column = 0x7f080164;
 		public static final int notification_main_column_container = 0x7f080165;
-		public static final int right_icon = 0x7f0801a7;
-		public static final int right_side = 0x7f0801a8;
-		public static final int tag_accessibility_actions = 0x7f0801f8;
-		public static final int tag_accessibility_clickable_spans = 0x7f0801f9;
-		public static final int tag_accessibility_heading = 0x7f0801fa;
-		public static final int tag_accessibility_pane_title = 0x7f0801fb;
-		public static final int tag_screen_reader_focusable = 0x7f0801ff;
-		public static final int tag_transition_group = 0x7f080201;
-		public static final int tag_unhandled_key_event_manager = 0x7f080202;
-		public static final int tag_unhandled_key_listeners = 0x7f080203;
-		public static final int text = 0x7f080205;
-		public static final int text2 = 0x7f080206;
-		public static final int time = 0x7f080221;
-		public static final int title = 0x7f080222;
+		public static final int right_icon = 0x7f0801a8;
+		public static final int right_side = 0x7f0801a9;
+		public static final int tag_accessibility_actions = 0x7f0801f9;
+		public static final int tag_accessibility_clickable_spans = 0x7f0801fa;
+		public static final int tag_accessibility_heading = 0x7f0801fb;
+		public static final int tag_accessibility_pane_title = 0x7f0801fc;
+		public static final int tag_screen_reader_focusable = 0x7f080200;
+		public static final int tag_transition_group = 0x7f080202;
+		public static final int tag_unhandled_key_event_manager = 0x7f080203;
+		public static final int tag_unhandled_key_listeners = 0x7f080204;
+		public static final int text = 0x7f080206;
+		public static final int text2 = 0x7f080207;
+		public static final int time = 0x7f080222;
+		public static final int title = 0x7f080223;
 	}
 	public static final class integer {
 		public static final int status_bar_notification_info_maxnum = 0x7f090042;

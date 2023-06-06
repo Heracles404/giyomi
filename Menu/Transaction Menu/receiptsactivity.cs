@@ -39,6 +39,7 @@ namespace Group2_IT123P_MP.Menu
             int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
             string selectedPaymentMethod = Intent.GetStringExtra("selectedPaymentMethod");
             string phoneNumber = Intent.GetStringExtra("phoneNumber");
+            string username = Intent.GetStringExtra("username");
 
             // Update image and book title
             ImageView receiptImageView = FindViewById<ImageView>(Resource.Id.receipt_imageview);
@@ -68,9 +69,14 @@ namespace Group2_IT123P_MP.Menu
             TextView receiptPhoneNumberTextView = FindViewById<TextView>(Resource.Id.receipt_phonenumber);
             receiptPhoneNumberTextView.Text = phoneNumber;
 
+            // Find and update the receipt_username TextView
+            TextView receiptUsernameTextView = FindViewById<TextView>(Resource.Id.receipt_username);
+            receiptUsernameTextView.Text = username;
+
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;
         }
+
         private void buttonThankYou_function_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(Start_Activity));
