@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>OnePlus CPH2399</SelectedDevice>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
-    <ActiveDebugProfile>OnePlus CPH2399 %28Android 13.0 - API 33%29</ActiveDebugProfile>
-    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
+    <SelectedDevice>pixel_5_-_api_21</SelectedDevice>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <ActiveDebugProfile>Pixel 5 - API 21 %28Android 5.0 - API 21%29</ActiveDebugProfile>
+    <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
     <AndroidDesignerPreferredDevice>pixel_3a</AndroidDesignerPreferredDevice>
-    <DefaultDevice>pixel_5_-_api_33</DefaultDevice>
+    <DefaultDevice>pixel_5_-_api_21</DefaultDevice>
   </PropertyGroup>
 </Project>

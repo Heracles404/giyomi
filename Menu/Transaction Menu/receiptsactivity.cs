@@ -8,6 +8,9 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using System;
+using static Android.Provider.UserDictionary;
+using System.IO;
+using System.Net;
 
 namespace Group2_IT123P_MP.Menu
 {
@@ -18,6 +21,10 @@ namespace Group2_IT123P_MP.Menu
         private TextView ref_number;
         private TextView receipt_mop;
         private TextView receipt_phonenumber;
+        private HttpWebRequest request;
+        private HttpWebResponse response;
+        private String res = "", username = "", bookName = "", referenceNumber = "", paymentmode = "", phoneNumber = "";
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -79,6 +86,11 @@ namespace Group2_IT123P_MP.Menu
 
         private void buttonThankYou_function_Click(object sender, EventArgs e)
         {
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/purchase.php?username=" + username + "&bookTitle=" + bookName + "&referenceNumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
+            response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            res = reader.ReadToEnd();
+
             StartActivity(typeof(Start_Activity));
         }
     }
