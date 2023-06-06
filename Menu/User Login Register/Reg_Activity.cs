@@ -44,6 +44,7 @@ namespace Group2_IT123P_MP.Menu
 
             buttonRegister = FindViewById<Button>(Resource.Id.buttonRegister);
             buttonRegister.Click += ButtonRegister_Click;
+
             register_email = FindViewById<EditText>(Resource.Id.register_email);
             register_username = FindViewById<EditText>(Resource.Id.register_username);
             register_password = FindViewById<EditText>(Resource.Id.register_password);
@@ -89,7 +90,7 @@ namespace Group2_IT123P_MP.Menu
                 try
                 {
                     // Create a request
-                    var request = (HttpWebRequest)WebRequest.Create("http://192.168.1.7/IT123P/REST/check_user.php?uname=" + register_username.Text + "&usermail=" + register_email.Text);
+                    var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/check_user.php?uname=" + register_username.Text + "&usermail=" + register_email.Text);
 
                     // Get the response
                     var response = (HttpWebResponse)request.GetResponse();

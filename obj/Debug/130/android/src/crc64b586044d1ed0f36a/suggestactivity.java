@@ -11,6 +11,7 @@ public class suggestactivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_onDestroy:()V:GetOnDestroyHandler\n" +
 			"";
 		mono.android.Runtime.register ("Group2_IT123P_MP.suggestactivity, Group2_IT123P_MP", suggestactivity.class, __md_methods);
 	}
@@ -40,6 +41,14 @@ public class suggestactivity
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
+
+
+	public void onDestroy ()
+	{
+		n_onDestroy ();
+	}
+
+	private native void n_onDestroy ();
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

@@ -63,7 +63,7 @@ namespace Group2_IT123P_MP.Menu.User_Login_Register
             {
                 // Check user email existence
                 // Create a request
-                var request = (HttpWebRequest)WebRequest.Create("http://192.168.1.7/IT123P/REST/user_forgot.php?usermail=" + email.Text);
+                var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/user_forgot.php?usermail=" + email.Text);
 
                 // Get the response
                 var response = (HttpWebResponse)request.GetResponse();
@@ -179,7 +179,7 @@ namespace Group2_IT123P_MP.Menu.User_Login_Register
                 try
                 {
                     // Change the IPV4 address based on your "OWN" ip
-                    string url = "http://192.168.1.7/IT123P/REST/update_password.php?usermail=" + email.Text + "&newpass=" + password.Text;
+                    string url = "http://192.168.5.94/IT123P/REST/update_password.php?usermail=" + email.Text + "&newpass=" + password.Text;
                     request = (HttpWebRequest)WebRequest.Create(url);
                     response = (HttpWebResponse)request.GetResponse();
                     StreamReader reader = new StreamReader(response.GetResponseStream());
