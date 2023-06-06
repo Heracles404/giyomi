@@ -19,7 +19,7 @@ public final class R {
 		public static final int fragment_open_exit = 0x7f020008;
 	}
 	public static final class id {
-		public static final int fragment_container_view_tag = 0x7f0800e4;
+		public static final int fragment_container_view_tag = 0x7f0800e5;
 		public static final int special_effects_controller_view_tag = 0x7f0801e2;
 		public static final int visible_removing_fragment_view_tag = 0x7f08023f;
 	}

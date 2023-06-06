@@ -19,10 +19,10 @@ public final class R {
 		public static final int statusBarBackground = 0x7f0303f0;
 	}
 	public static final class id {
-		public static final int bottom = 0x7f08006a;
-		public static final int end = 0x7f0800cf;
-		public static final int left = 0x7f08010c;
-		public static final int none = 0x7f080160;
+		public static final int bottom = 0x7f08006b;
+		public static final int end = 0x7f0800d0;
+		public static final int left = 0x7f08010d;
+		public static final int none = 0x7f080161;
 		public static final int right = 0x7f0801a6;
 		public static final int start = 0x7f0801ed;
 		public static final int top = 0x7f080227;

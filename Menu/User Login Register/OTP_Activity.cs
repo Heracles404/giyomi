@@ -71,7 +71,7 @@ namespace Group2_IT123P_MP.Menu
                 try
                 {
                     // Change the IPV4 address based on your "OWN" ip
-                    string url = "http://192.168.68.104/IT123P/REST/register_table.php?uname=" + Uri.EscapeDataString(uname) + "&pword=" + Uri.EscapeDataString(pword) + "&usermail=" + Uri.EscapeDataString(usermail);
+                    string url = "http://192.168.1.7/IT123P/REST/register_table.php?uname=" + Uri.EscapeDataString(uname) + "&pword=" + Uri.EscapeDataString(pword) + "&usermail=" + Uri.EscapeDataString(usermail);
                     request = (HttpWebRequest)WebRequest.Create(url);
                     response = (HttpWebResponse)request.GetResponse();
                     StreamReader reader = new StreamReader(response.GetResponseStream());
