@@ -9,6 +9,7 @@ using Android.Widget;
 using Group2_IT123P_MP.Menu;
 using AndroidX.AppCompat.App;
 using System;
+using Android.Content;
 
 namespace Group2_IT123P_MP
 {
@@ -35,13 +36,11 @@ namespace Group2_IT123P_MP
             // Background Color
             Window.DecorView.SetBackgroundColor(Color.ParseColor("#394359"));
 
-
             buttonRegister = FindViewById<Button>(Resource.Id.buttonRegister);
             buttonRegister.Click += ButtonRegister_Click;
 
             buttonLogin = FindViewById<Button>(Resource.Id.buttonLogin);
             buttonLogin.Click += ButtonLogin_Click;
-
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
@@ -52,6 +51,26 @@ namespace Group2_IT123P_MP
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(Log_Activity));
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            // Check if the user is already logged in
+            if (IsUserLoggedIn())
+            {
+                StartActivity(typeof(Start_Activity));
+                Finish(); // Finish the current activity to prevent the user from going back
+            }
+        }
+
+        private bool IsUserLoggedIn()
+        {
+            // Retrieve the login session status using SharedPreferences or any other method of your choice
+            // For demonstration purposes, I'm using SharedPreferences
+            ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+            return sharedPreferences.GetBoolean("IsLoggedIn", false);
         }
     }
 }

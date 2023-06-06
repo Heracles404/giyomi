@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -8,8 +9,8 @@ using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Group2_IT123P_MP.Menu;
 using System;
-
 
 namespace Group2_IT123P_MP
 {
@@ -19,6 +20,7 @@ namespace Group2_IT123P_MP
         private Button ViewButton;
         private Button BuyButton;
         private Button SuggestButton;
+        private Button LogoutButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,39 +39,49 @@ namespace Group2_IT123P_MP
             // Background Color
             Window.DecorView.SetBackgroundColor(Color.ParseColor("#394359"));
 
-
             ViewButton = FindViewById<Button>(Resource.Id.ViewButton);
-            ViewButton.Click += viewbutton_Click;
+            ViewButton.Click += ViewButton_Click;
 
             BuyButton = FindViewById<Button>(Resource.Id.BuyButton);
-            BuyButton.Click += buybutton_Click;
+            BuyButton.Click += BuyButton_Click;
 
             SuggestButton = FindViewById<Button>(Resource.Id.SuggestButton);
-            SuggestButton.Click += suggestbutton_Click;
+            SuggestButton.Click += SuggestButton_Click;
+
+            LogoutButton = FindViewById<Button>(Resource.Id.LogoutButton);
+            LogoutButton.Click += LogoutButton_Click;
         }
 
-        private void viewbutton_Click(object sender, EventArgs e)
+        private void ViewButton_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(viewactivity));
         }
 
-        private void buybutton_Click(object sender, EventArgs e)
+        private void BuyButton_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(buyactivity));
         }
 
-        private void suggestbutton_Click(object sender, EventArgs e)
+        private void SuggestButton_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(suggestactivity));
         }
-        public override void OnBackPressed()
+
+        private void LogoutButton_Click(object sender, EventArgs e)
         {
-            FinishAffinity();
+            SetUserLoggedIn(false); // Set the user login status to false
+            StartActivity(typeof(Log_Activity)); // Go back to the login screen
+            Finish(); // Finish the current activity to prevent the user from going back
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+
+        private void SetUserLoggedIn(bool isLoggedIn)
         {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            // Set the login session status using SharedPreferences or any other method of your choice
+            // For demonstration purposes, I'm using SharedPreferences
+            ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            editor.PutBoolean("IsLoggedIn", isLoggedIn);
+            editor.Apply();
         }
     }
 }

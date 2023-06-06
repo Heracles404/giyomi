@@ -79,7 +79,7 @@ namespace Group2_IT123P_MP.Menu
             {
                 pword = login_password.Text;
                 uname = login_username.Text;
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/user_login.php?uname=" + uname + "&pword=" + pword);
+                request = (HttpWebRequest)WebRequest.Create("http://192.168.1.7/IT123P/REST/user_login.php?uname=" + uname + "&pword=" + pword);
                 response = (HttpWebResponse)request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 res = reader.ReadToEnd();
@@ -88,16 +88,24 @@ namespace Group2_IT123P_MP.Menu
                 if (res.Contains("OK!"))
                 {
                     // Login successful
+                    SetUserLoggedIn(true); // Set the login session status to true
+
                     Intent i = new Intent(this, typeof(Start_Activity));
                     i.PutExtra("Name", uname);
                     StartActivity(i);
-                }
-                else
-                {
-                    // Login failed
-                    Toast.MakeText(this, "Invalid credentials.", ToastLength.Short).Show();
+                    Finish(); // Finish the current activity to prevent the user from going back to the login screen using the back button
                 }
             }
+        }
+
+        private void SetUserLoggedIn(bool isLoggedIn)
+        {
+            // Set the login session status using SharedPreferences or any other method of your choice
+            // For demonstration purposes, I'm using SharedPreferences
+            ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            editor.PutBoolean("IsLoggedIn", isLoggedIn);
+            editor.Apply();
         }
     }
 }
