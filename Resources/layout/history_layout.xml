@@ -24,13 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="40.0dp">
+        android:layout_marginTop="80dp">
 
         <TextView
             android:text="Reference Number:"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="154.9dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20.0dp"
             android:layout_marginLeft="50dp"
@@ -41,8 +43,9 @@
         <TextView
             android:layout_marginTop="50dp"
             android:text="Reference number"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:id="@+id/refnumber"
@@ -59,8 +62,10 @@
         <TextView
             android:text="Payment Mode:"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20.0dp"
             android:layout_marginLeft="50dp"
@@ -70,10 +75,10 @@
 
         <TextView
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="70dp"
             android:text="Payment Mode"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:id="@+id/paymenttext"
@@ -90,8 +95,10 @@
         <TextView
             android:text="Price:"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20.0dp"
             android:layout_marginLeft="50dp"
@@ -101,10 +108,10 @@
 
         <TextView
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="100dp"
             android:text="Price"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:id="@+id/pricetext"
@@ -121,8 +128,10 @@
         <TextView
             android:text="Mobile Number:"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20.0dp"
             android:layout_marginLeft="50dp"
@@ -132,9 +141,9 @@
 
         <TextView
             android:text="Mobile Number"
-            android:layout_marginLeft="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:id="@+id/mobilenumbertext"
@@ -149,7 +158,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="180.0dp"
+        android:layout_marginTop="200.0dp"
         android:textColor="#FFFFFF"
         android:id="@+id/sentence"
         android:textSize="15sp"/>

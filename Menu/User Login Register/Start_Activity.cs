@@ -23,12 +23,16 @@ namespace Group2_IT123P_MP
         private Button SuggestButton;
         private Button LogoutButton;
         private Button Paymenthistorybutton;
+        private string uname;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main_Menu);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+            // Retrieve the uname value from the intent
+            string uname = Intent.GetStringExtra("Name");
 
             // Customize the ActionBar
             var actionBar = SupportActionBar;
@@ -74,7 +78,9 @@ namespace Group2_IT123P_MP
 
         private void Paymenthistorybutton_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(historyactivity));
+            Intent intent = new Intent(this, typeof(historyactivity));
+            intent.PutExtra("Name", uname);
+            StartActivity(intent);
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)

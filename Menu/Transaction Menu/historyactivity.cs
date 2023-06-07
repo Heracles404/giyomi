@@ -43,6 +43,8 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
 
             spinneritems = FindViewById<Spinner>(Resource.Id.spinneritems);
 
+            string uname = Intent.GetStringExtra("Name");
+
             // Create a list to hold the items
             List<string> items = new List<string>();
 
