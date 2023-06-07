@@ -90,7 +90,7 @@ namespace Group2_IT123P_MP.Menu
                 try
                 {
                     // Create a request
-                    var request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/check_user.php?uname=" + register_username.Text + "&usermail=" + register_email.Text);
+                    var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/check_user.php?uname=" + register_username.Text + "&usermail=" + register_email.Text);
 
                     // Get the response
                     var response = (HttpWebResponse)request.GetResponse();

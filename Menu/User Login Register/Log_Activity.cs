@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using AndroidX.AppCompat.App;
 using System.Net;
+using Group2_IT123P_MP.Menu.Transaction_Menu;
 
 namespace Group2_IT123P_MP.Menu
 {
@@ -26,6 +27,65 @@ namespace Group2_IT123P_MP.Menu
         private Button buttonLogIn;
         private TextView forgotPassword;
         private String res = "", str = "", uname = "", pword = "";
+        private const string UsernameKey = "username";
+
+        public class SingletonClass
+        {
+            private static SingletonClass instance;
+            private string username;
+
+            private SingletonClass()
+            {
+                // Private constructor to prevent instantiation
+            }
+
+            public static SingletonClass GetInstance()
+            {
+                if (instance == null)
+                {
+                    instance = new SingletonClass();
+                }
+                return instance;
+            }
+
+            public string Username
+            {
+                get
+                {
+                    if (string.IsNullOrEmpty(username))
+                    {
+                        // Retrieve the username from shared preferences or any other storage
+                        // For demonstration purposes, I'm using SharedPreferences
+                        ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+                        username = sharedPreferences.GetString("Username", string.Empty);
+                    }
+                    return username;
+                }
+                set
+                {
+                    username = value;
+                    // Save the username to shared preferences or any other storage
+                    // For demonstration purposes, I'm using SharedPreferences
+                    ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = sharedPreferences.Edit();
+                    editor.PutString("Username", username);
+                    editor.Apply();
+                }
+            }
+
+            public void ResetUsername()
+            {
+                username = string.Empty;
+                // Clear the username from shared preferences or any other storage
+                // For demonstration purposes, I'm using SharedPreferences
+                ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+                ISharedPreferencesEditor editor = sharedPreferences.Edit();
+                editor.Remove("Username");
+                editor.Apply();
+            }
+        }
+
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -79,20 +139,28 @@ namespace Group2_IT123P_MP.Menu
             {
                 pword = login_password.Text;
                 uname = login_username.Text;
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/user_login.php?uname=" + uname + "&pword=" + pword);
+                request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/user_login.php?uname=" + uname + "&pword=" + pword);
                 response = (HttpWebResponse)request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 res = reader.ReadToEnd();
-                Toast.MakeText(this, res, ToastLength.Long).Show();
+                Toast.MakeText(this, res, ToastLength.Short).Show();
 
                 if (res.Contains("OK!"))
                 {
                     // Login successful
                     SetUserLoggedIn(true); // Set the login session status to true
+                    SingletonClass singleton = SingletonClass.GetInstance();
+                    SaveUsername(singleton.Username);
 
-                    Intent i = new Intent(this, typeof(Start_Activity));
-                    i.PutExtra("Name", uname);
-                    StartActivity(i);
+                    // Retrieve the username from the input field
+                    string username = login_username.Text;
+
+                    // Set the username in the SingletonClass
+                    SingletonClass.GetInstance().Username = username;
+
+                    // Start the historyactivity.cs
+                    Intent intent = new Intent(this, typeof(Start_Activity));
+                    StartActivity(intent);
                     Finish(); // Finish the current activity to prevent the user from going back to the login screen using the back button
                 }
             }
@@ -107,5 +175,14 @@ namespace Group2_IT123P_MP.Menu
             editor.PutBoolean("IsLoggedIn", isLoggedIn);
             editor.Apply();
         }
+
+        private void SaveUsername(string username)
+        {
+            ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            editor.PutString(UsernameKey, username);
+            editor.Apply();
+        }
+
     }
 }
