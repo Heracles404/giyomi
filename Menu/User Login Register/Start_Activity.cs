@@ -12,6 +12,7 @@ using AndroidX.AppCompat.App;
 using Group2_IT123P_MP.Menu;
 using Group2_IT123P_MP.Menu.Transaction_Menu;
 using System;
+using static Group2_IT123P_MP.Menu.Log_Activity;
 
 namespace Group2_IT123P_MP
 {
@@ -25,14 +26,13 @@ namespace Group2_IT123P_MP
         private Button Paymenthistorybutton;
         private string uname;
 
+        string username = SingletonClass.GetInstance().Username;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main_Menu);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
-            // Retrieve the uname value from the intent
-            string uname = Intent.GetStringExtra("Name");
 
             // Customize the ActionBar
             var actionBar = SupportActionBar;
@@ -78,26 +78,50 @@ namespace Group2_IT123P_MP
 
         private void Paymenthistorybutton_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(historyactivity));
-            intent.PutExtra("Name", uname);
-            StartActivity(intent);
+            StartActivity(typeof(historyactivity));
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            SetUserLoggedIn(false); // Set the user login status to false
+            SetUserLoggedIn(false, null); // Set the user login status to false and clear the username
             StartActivity(typeof(Log_Activity)); // Go back to the login screen
             Finish(); // Finish the current activity to prevent the user from going back
         }
 
-        private void SetUserLoggedIn(bool isLoggedIn)
+        private void SetUserLoggedIn(bool isLoggedIn, string username)
         {
-            // Set the login session status using SharedPreferences or any other method of your choice
+            // Set the login session status and username using SharedPreferences or any other method of your choice
             // For demonstration purposes, I'm using SharedPreferences
             ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
             editor.PutBoolean("IsLoggedIn", isLoggedIn);
+            editor.PutString("Username", username);
             editor.Apply();
         }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            // Check if the user is still logged in
+            bool isLoggedIn = GetLoggedInStatus();
+
+            if (!isLoggedIn)
+            {
+                // User is not logged in, redirect to login screen
+                StartActivity(typeof(Log_Activity));
+                Finish();
+            }
+        }
+
+        private bool GetLoggedInStatus()
+        {
+            // Get the login session status from shared preferences or any other method of your choice
+            // For demonstration purposes, I'm using SharedPreferences
+            ISharedPreferences sharedPreferences = GetSharedPreferences("MyAppPrefs", FileCreationMode.Private);
+            return sharedPreferences.GetBoolean("IsLoggedIn", false);
+        }
+
+
     }
 }

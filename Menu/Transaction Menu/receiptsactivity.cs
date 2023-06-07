@@ -94,7 +94,7 @@ namespace Group2_IT123P_MP.Menu
 
         private void insertTransactionRecord()
         {
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/purchase.php?username=" + username.ToString() + "&bookName=" + bookName + "&referencenumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/purchase.php?username=" + username.ToString() + "&bookName=" + bookName + "&referencenumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             res = reader.ReadToEnd();

@@ -16,6 +16,8 @@ using Android.Graphics;
 using System.IO;
 using Newtonsoft.Json;
 using System.Net;
+using Group2_IT123P_MP.Menu;
+using static Group2_IT123P_MP.Menu.Log_Activity;
 
 namespace Group2_IT123P_MP.Menu.Transaction_Menu
 {
@@ -25,10 +27,13 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
         private Spinner spinneritems;
         private ArrayAdapter<string> spinnerAdapter;
 
+        string username = SingletonClass.GetInstance().Username;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.history_layout);
+            Toast.MakeText(this, "Received uname: " + username, ToastLength.Short).Show();
 
             // Customize the ActionBar
             var actionBar = SupportActionBar;
@@ -42,8 +47,6 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
             Window.DecorView.SetBackgroundColor(Android.Graphics.Color.ParseColor("#394359"));
 
             spinneritems = FindViewById<Spinner>(Resource.Id.spinneritems);
-
-            string uname = Intent.GetStringExtra("Name");
 
             // Create a list to hold the items
             List<string> items = new List<string>();
@@ -68,7 +71,7 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
             try
             {
                 // Create a request
-                var request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/retrieve_items.php");
+                var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/retrieve_items.php?username=" + username);
 
                 // Get the response
                 var response = (HttpWebResponse)request.GetResponse();
@@ -89,6 +92,7 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
                 Toast.MakeText(this, "Failed to retrieve items", ToastLength.Short).Show();
             }
         }
+
 
         private void SpinnerItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -133,12 +137,13 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
             }
         }
 
+
         private List<Dictionary<string, string>> RetrieveItemData()
         {
             try
             {
                 // Create a request
-                var request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/retrieve_items.php");
+                var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/retrieve_items.php");
 
                 // Get the response
                 var response = (HttpWebResponse)request.GetResponse();
