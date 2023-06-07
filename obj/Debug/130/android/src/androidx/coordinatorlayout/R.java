@@ -19,13 +19,13 @@ public final class R {
 		public static final int statusBarBackground = 0x7f0303f0;
 	}
 	public static final class id {
-		public static final int bottom = 0x7f08006b;
-		public static final int end = 0x7f0800cf;
-		public static final int left = 0x7f08010c;
-		public static final int none = 0x7f080160;
-		public static final int right = 0x7f0801a6;
-		public static final int start = 0x7f0801ed;
-		public static final int top = 0x7f080227;
+		public static final int bottom = 0x7f08006d;
+		public static final int end = 0x7f0800d1;
+		public static final int left = 0x7f08010e;
+		public static final int none = 0x7f080164;
+		public static final int right = 0x7f0801af;
+		public static final int start = 0x7f0801f8;
+		public static final int top = 0x7f080232;
 	}
 	public static final class style {
 		public static final int Widget_Support_CoordinatorLayout = 0x7f10044d;

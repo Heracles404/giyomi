@@ -7,8 +7,8 @@
     -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.group2_it123p_mp" android:installLocation="auto">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
-  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:label="Pre Order" android:name="crc64b586044d1ed0f36a.buyactivity" />
     <activity android:label="Giyomi" android:theme="@style/AppTheme" android:name="crc64b586044d1ed0f36a.MainActivity" android:exported="true">
@@ -26,6 +26,7 @@
     <activity android:label="OTP" android:name="crc6454d2e78dafc1cb11.OTP_Activity" />
     <activity android:label="Register" android:name="crc6454d2e78dafc1cb11.Reg_Activity" />
     <activity android:label="Forgot Password" android:name="crc64cc0916eadba17033.ForgotPass_Activity" />
+    <activity android:label="Payment History" android:name="crc64a11d544d9e4e3f02.historyactivity" />
     <activity android:label="The Reborn Witch Foretells Destruction" android:name="crc6489a34cfda5ee1092.book1_view" />
     <activity android:label="[Oshi no Ko]" android:name="crc6489a34cfda5ee1092.book2_view" />
     <activity android:label="Bocchi the Rock!" android:name="crc6489a34cfda5ee1092.book3_view" />

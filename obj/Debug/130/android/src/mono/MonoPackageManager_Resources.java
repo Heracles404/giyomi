@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Group2_IT123P_MP.dll" comes first in this list. */
 		"Group2_IT123P_MP.dll",
+		"Newtonsoft.Json.dll",
 		"System.Data.OleDb.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

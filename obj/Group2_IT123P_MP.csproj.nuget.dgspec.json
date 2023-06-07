@@ -38,6 +38,10 @@
       "frameworks": {
         "monoandroid13.0": {
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Data.OleDb": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -45,6 +49,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             },
             "Xamarin.Android.Support.v7.AppCompat": {
               "target": "Package",

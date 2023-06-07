@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Group2_IT123P_MP.Menu;
+using Group2_IT123P_MP.Menu.Transaction_Menu;
 using System;
 
 namespace Group2_IT123P_MP
@@ -21,6 +22,7 @@ namespace Group2_IT123P_MP
         private Button BuyButton;
         private Button SuggestButton;
         private Button LogoutButton;
+        private Button Paymenthistorybutton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,6 +52,9 @@ namespace Group2_IT123P_MP
 
             LogoutButton = FindViewById<Button>(Resource.Id.LogoutButton);
             LogoutButton.Click += LogoutButton_Click;
+
+            Paymenthistorybutton = FindViewById<Button>(Resource.Id.Paymenthistorybutton);
+            Paymenthistorybutton.Click += Paymenthistorybutton_Click;
         }
 
         private void ViewButton_Click(object sender, EventArgs e)
@@ -65,6 +70,11 @@ namespace Group2_IT123P_MP
         private void SuggestButton_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(suggestactivity));
+        }
+
+        private void Paymenthistorybutton_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(historyactivity));
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
