@@ -16,7 +16,7 @@ Button;obj\Debug\130\res\layout\receipts_layout.xml
 Button;obj\Debug\130\res\layout\register_layout.xml
 Button;obj\Debug\130\res\layout\start_menu.xml
 Button;obj\Debug\130\res\layout\suggest_layout.xml
-cache-path;C:\Users\bncnz\Downloads\git\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;C:\Users\crist\Documents\GitHub\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\130\res\values\colors.xml
 color;obj\Debug\130\res\values\ic_launcher_background.xml
 EditText;obj\Debug\130\res\layout\forgotpassword_layout.xml
@@ -25,8 +25,8 @@ EditText;obj\Debug\130\res\layout\otp_layout.xml
 EditText;obj\Debug\130\res\layout\payment_layout.xml
 EditText;obj\Debug\130\res\layout\register_layout.xml
 EditText;obj\Debug\130\res\layout\suggest_layout.xml
-external-cache-path;C:\Users\bncnz\Downloads\git\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;C:\Users\bncnz\Downloads\git\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;C:\Users\crist\Documents\GitHub\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;C:\Users\crist\Documents\GitHub\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher_round.xml
 ImageButton;obj\Debug\130\res\layout\view_layout.xml
@@ -58,7 +58,7 @@ LinearLayout;obj\Debug\130\res\layout\spinner_item_layout.xml
 LinearLayout;obj\Debug\130\res\layout\start_menu.xml
 LinearLayout;obj\Debug\130\res\layout\suggest_layout.xml
 LinearLayout;obj\Debug\130\res\layout\view_layout.xml
-paths;C:\Users\bncnz\Downloads\git\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;C:\Users\crist\Documents\GitHub\giyomi\obj\Debug\130\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RadioButton;obj\Debug\130\res\layout\buy_layout.xml
 RadioButton;obj\Debug\130\res\layout\payment_layout.xml
 RadioButton;obj\Debug\130\res\layout\suggest_layout.xml
