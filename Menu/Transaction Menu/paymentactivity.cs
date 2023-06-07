@@ -116,11 +116,11 @@ namespace Group2_IT123P_MP.Menu
 
                 // Pass intent to ReceiptsActivity
                 Intent intent = new Intent(this, typeof(receiptsactivity));
-                intent.PutExtra("bookName", bookName);
-                intent.PutExtra("selectedImageId", selectedImageId);
-                intent.PutExtra("selectedPaymentMethod", selectedPaymentMethod);
-                intent.PutExtra("phoneNumber", phoneNumber);
-                intent.PutExtra("username", username);
+                intent.PutExtra("bookNameRef", bookName);
+                intent.PutExtra("selectedImageIdRef", selectedImageId);
+                intent.PutExtra("selectedPaymentMethodRef", selectedPaymentMethod);
+                intent.PutExtra("phoneNumberRef", phoneNumber);
+                intent.PutExtra("usernameRef", username.ToString());
                 StartActivity(intent);
             });
             builder.SetNegativeButton("Cancel", (sender, args) =>

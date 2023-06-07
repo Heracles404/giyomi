@@ -85,7 +85,7 @@ namespace Group2_IT123P_MP
             }
 
             // Create the request URL with the genre and book name as parameters
-            string requestUrl = $"http://192.168.5.94/IT123P/REST/suggestions.php?genre={Uri.EscapeDataString(genre)}&suggestBName={Uri.EscapeDataString(bookName)}";
+            string requestUrl = $"http://192.168.68.105/IT123P/REST/suggestions.php?genre={Uri.EscapeDataString(genre)}&suggestBName={Uri.EscapeDataString(bookName)}";
 
             // Create a request
             var request = (HttpWebRequest)WebRequest.Create(requestUrl);
@@ -136,7 +136,7 @@ namespace Group2_IT123P_MP
         private string RetrieveGenresFromDatabase()
         {
             // Create a request to retrieve the genres from the database
-            var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/retrieve_genres.php");
+            var request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/retrieve_genres.php");
 
             // Get the response
             using (var response = (HttpWebResponse)request.GetResponse())

@@ -8,6 +8,10 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using System;
+using static Android.Provider.UserDictionary;
+using System.IO;
+using System.Net;
+using Android.Content;
 
 namespace Group2_IT123P_MP.Menu
 {
@@ -18,6 +22,10 @@ namespace Group2_IT123P_MP.Menu
         private TextView ref_number;
         private TextView receipt_mop;
         private TextView receipt_phonenumber;
+        private HttpWebRequest request;
+        private HttpWebResponse response;
+        private string res, username, bookName, referenceNumber, paymentmode, phoneNumber;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,11 +43,11 @@ namespace Group2_IT123P_MP.Menu
             Window.DecorView.SetBackgroundColor(Color.ParseColor("#394359"));
 
             // Retrieve intent extras
-            string bookName = Intent.GetStringExtra("bookName");
-            int selectedImageId = Intent.GetIntExtra("selectedImageId", 0);
-            string selectedPaymentMethod = Intent.GetStringExtra("selectedPaymentMethod");
-            string phoneNumber = Intent.GetStringExtra("phoneNumber");
-            string username = Intent.GetStringExtra("username");
+            bookName = Intent.GetStringExtra("bookNameRef");
+            int selectedImageId = Intent.GetIntExtra("selectedImageIdRef", 0);
+            paymentmode = Intent.GetStringExtra("selectedPaymentMethodRef");
+            phoneNumber = Intent.GetStringExtra("phoneNumberRef");
+            username = Intent.GetStringExtra("usernameRef");
 
             // Update image and book title
             ImageView receiptImageView = FindViewById<ImageView>(Resource.Id.receipt_imageview);
@@ -49,7 +57,7 @@ namespace Group2_IT123P_MP.Menu
             receiptBookNameTextView.Text = bookName;
 
             // Generate reference number
-            string referenceNumber = String.Empty;
+            referenceNumber = String.Empty;
             var random = new Random();
 
             for (int i = 0; i < 8; i++)
@@ -57,13 +65,16 @@ namespace Group2_IT123P_MP.Menu
                 referenceNumber += random.Next(0, 10).ToString();
             }
 
+            Toast.MakeText(this, "Please keep a copy of this receipt.", ToastLength.Short).Show();
+
+
             // Update reference number TextView
             TextView refNumberTextView = FindViewById<TextView>(Resource.Id.ref_number);
             refNumberTextView.Text = "Ref. Number: " + referenceNumber;
 
             // Update receipt_mop TextView
             TextView receiptMopTextView = FindViewById<TextView>(Resource.Id.receipt_mop);
-            receiptMopTextView.Text = selectedPaymentMethod;
+            receiptMopTextView.Text = paymentmode;
 
             // Update receipt_phonenumber TextView
             TextView receiptPhoneNumberTextView = FindViewById<TextView>(Resource.Id.receipt_phonenumber);
@@ -75,11 +86,24 @@ namespace Group2_IT123P_MP.Menu
 
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;
+
+
+
+            // insertTransactionRecord();
+        }
+
+        private void insertTransactionRecord()
+        {
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.68.105/IT123P/REST/purchase.php?username=" + username.ToString() + "&bookName=" + bookName + "&referencenumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
+            response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            res = reader.ReadToEnd();
         }
 
         private void buttonThankYou_function_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(Start_Activity));
         }
+
     }
 }
