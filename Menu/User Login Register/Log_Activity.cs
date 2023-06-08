@@ -143,7 +143,6 @@ namespace Group2_IT123P_MP.Menu
                 response = (HttpWebResponse)request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 res = reader.ReadToEnd();
-                Toast.MakeText(this, res, ToastLength.Short).Show();
 
                 if (res.Contains("OK!"))
                 {
@@ -158,10 +157,16 @@ namespace Group2_IT123P_MP.Menu
                     // Set the username in the SingletonClass
                     SingletonClass.GetInstance().Username = username;
 
+                    Toast.MakeText(this, "Welcome!", ToastLength.Short).Show();
+
                     // Start the historyactivity.cs
                     Intent intent = new Intent(this, typeof(Start_Activity));
                     StartActivity(intent);
                     Finish(); // Finish the current activity to prevent the user from going back to the login screen using the back button
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect credentials.", ToastLength.Short).Show();
                 }
             }
         }

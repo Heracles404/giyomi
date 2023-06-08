@@ -4,12 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+            android:text="View History:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="320.0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50.0dp"
+            android:id="@id/textEmail"
+            android:textColor="@android:color/white"/>
+
     <Spinner
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
+        android:layout_width="320.0dp"
         android:layout_height="30.5dp"
         android:minWidth="25px"
         android:minHeight="25px"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:id="@+id/spinneritems"
@@ -158,7 +168,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="200.0dp"
+        android:layout_marginTop="190.0dp"
         android:textColor="#FFFFFF"
         android:id="@+id/sentence"
         android:textSize="15sp"/>

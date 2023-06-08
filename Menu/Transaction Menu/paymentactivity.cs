@@ -10,6 +10,7 @@ using Android.Widget;
 using System;
 using System.Linq;
 using AndroidX.AppCompat.App;
+using static Group2_IT123P_MP.Menu.Log_Activity;
 
 namespace Group2_IT123P_MP.Menu
 {
@@ -120,7 +121,6 @@ namespace Group2_IT123P_MP.Menu
                 intent.PutExtra("selectedImageIdRef", selectedImageId);
                 intent.PutExtra("selectedPaymentMethodRef", selectedPaymentMethod);
                 intent.PutExtra("phoneNumberRef", phoneNumber);
-                intent.PutExtra("usernameRef", username.ToString());
                 StartActivity(intent);
             });
             builder.SetNegativeButton("Cancel", (sender, args) =>

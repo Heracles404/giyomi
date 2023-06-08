@@ -38,7 +38,7 @@ namespace Group2_IT123P_MP
             var actionBar = SupportActionBar;
             actionBar.SetBackgroundDrawable(new ColorDrawable(Color.ParseColor("#f2be8d")));
 
-            SpannableString spannableString = new SpannableString("Menu");
+            SpannableString spannableString = new SpannableString("Welcome " + username + "!");
             spannableString.SetSpan(new ForegroundColorSpan(Color.ParseColor("#ba6d65")), 0, spannableString.Length(), SpanTypes.ExclusiveExclusive);
             actionBar.TitleFormatted = spannableString;
 
@@ -122,6 +122,11 @@ namespace Group2_IT123P_MP
             return sharedPreferences.GetBoolean("IsLoggedIn", false);
         }
 
-
+        public override void OnBackPressed()
+        {
+            // Disable the default behavior of going back to the previous activity
+            // by leaving this method empty
+            FinishAffinity();
+        }
     }
 }
