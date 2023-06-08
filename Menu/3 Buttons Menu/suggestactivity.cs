@@ -22,7 +22,7 @@ namespace Group2_IT123P_MP
         private RadioGroup radioGroupGenre;
         private EditText editTextSuggestLeading;
         private Timer timer;
-        private const int RefreshInterval = 1000; // Update every 5 seconds (adjust as needed)
+        private const int RefreshInterval = 1000; // Update every 1 second (adjust as needed)
 
         private HttpWebRequest request;
         private HttpWebResponse response;
@@ -126,7 +126,7 @@ namespace Group2_IT123P_MP
                 }
                 else
                 {
-                    editTextSuggestLeading.Text = "No genres found";
+                    editTextSuggestLeading.Text = "No votes found";
                 }
                 editTextSuggestLeading.Enabled = false; // Disable the EditText
             });

@@ -12,6 +12,7 @@ using static Android.Provider.UserDictionary;
 using System.IO;
 using System.Net;
 using Android.Content;
+using static Group2_IT123P_MP.Menu.Log_Activity;
 
 namespace Group2_IT123P_MP.Menu
 {
@@ -24,7 +25,9 @@ namespace Group2_IT123P_MP.Menu
         private TextView receipt_phonenumber;
         private HttpWebRequest request;
         private HttpWebResponse response;
-        private string res, username, bookName, referenceNumber, paymentmode, phoneNumber;
+        private string res, bookName, referenceNumber, paymentmode, phoneNumber;
+
+        string username = SingletonClass.GetInstance().Username;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,7 +50,6 @@ namespace Group2_IT123P_MP.Menu
             int selectedImageId = Intent.GetIntExtra("selectedImageIdRef", 0);
             paymentmode = Intent.GetStringExtra("selectedPaymentMethodRef");
             phoneNumber = Intent.GetStringExtra("phoneNumberRef");
-            username = Intent.GetStringExtra("usernameRef");
 
             // Update image and book title
             ImageView receiptImageView = FindViewById<ImageView>(Resource.Id.receipt_imageview);
@@ -87,14 +89,12 @@ namespace Group2_IT123P_MP.Menu
             buttonThankYou = FindViewById<Button>(Resource.Id.buttonThankYou);
             buttonThankYou.Click += buttonThankYou_function_Click;
 
-
-
-            // insertTransactionRecord();
+            insertTransactionRecord();
         }
 
         private void insertTransactionRecord()
         {
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/purchase.php?username=" + username.ToString() + "&bookName=" + bookName + "&referencenumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/purchase.php?username=" + username + "&bookName=" + bookName + "&referenceNumber=" + referenceNumber + "&paymentmode=" + paymentmode + "&phoneNumber=" + phoneNumber);
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             res = reader.ReadToEnd();

@@ -31,7 +31,7 @@ namespace Group2_IT123P_MP
             var actionBar = SupportActionBar;
             actionBar.SetBackgroundDrawable(new ColorDrawable(Color.ParseColor("#f2be8d")));
 
-            SpannableString spannableString = new SpannableString("Menu");
+            SpannableString spannableString = new SpannableString("Manga Menu");
             spannableString.SetSpan(new ForegroundColorSpan(Color.ParseColor("#ba6d65")), 0, spannableString.Length(), SpanTypes.ExclusiveExclusive);
             actionBar.TitleFormatted = spannableString;
 

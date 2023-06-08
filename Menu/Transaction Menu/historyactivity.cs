@@ -33,7 +33,6 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.history_layout);
-            Toast.MakeText(this, "Received uname: " + username, ToastLength.Short).Show();
 
             // Customize the ActionBar
             var actionBar = SupportActionBar;
@@ -58,7 +57,7 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
             RetrieveItems(items);
 
             // Create an ArrayAdapter with the items
-            ArrayAdapter<string> spinnerAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, items);
+            spinnerAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, items);
             spinneritems.Adapter = spinnerAdapter;
 
             // Set the item selection listener
@@ -116,7 +115,7 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
                 TextView mobileNumberTextView = FindViewById<TextView>(Resource.Id.mobilenumbertext);
 
                 // Call the PHP file and retrieve the item data
-                List<Dictionary<string, string>> itemDataList = RetrieveItemData();
+                List<Dictionary<string, string>> itemDataList = RetrieveItemData(selectedBookName);
 
                 // Find the itemData for the selected book name
                 Dictionary<string, string> selectedItemData = itemDataList.FirstOrDefault(itemData => itemData["bookName"] == selectedBookName);
@@ -138,12 +137,12 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
         }
 
 
-        private List<Dictionary<string, string>> RetrieveItemData()
+        private List<Dictionary<string, string>> RetrieveItemData(string selectedBookName)
         {
             try
             {
                 // Create a request
-                var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/retrieve_items.php");
+                var request = (HttpWebRequest)WebRequest.Create("http://192.168.5.94/IT123P/REST/retrieve_items.php?username=" + username + "&bookname=" + selectedBookName);
 
                 // Get the response
                 var response = (HttpWebResponse)request.GetResponse();
@@ -161,6 +160,7 @@ namespace Group2_IT123P_MP.Menu.Transaction_Menu
                 return new List<Dictionary<string, string>>();
             }
         }
+
 
         private void ClearTextViews()
         {
